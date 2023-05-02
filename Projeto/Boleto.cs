@@ -1,4 +1,4 @@
-namespace projeto_pagamento_28_04
+namespace Projeto
 {
     public class Boleto : Pagamento
     {
@@ -8,14 +8,14 @@ namespace projeto_pagamento_28_04
         //métodos
         public void Registrar()
         {
-           // valor a ser pago com desconto
-            Console.WriteLine($"{Valor * 0.88}");
+            // valor a ser pago com desconto
+            Console.WriteLine($"Valor: {Valor * 0.88}");
         }
 
 
         public void MostrarCodigoBarras()
         {
-            Console.WriteLine($"{this.CodigoBarras = (Codigo.Next(900000000)).ToString()} {this.CodigoBarras = (Codigo.Next(900000000)).ToString()} {this.CodigoBarras = (Codigo.Next(900000000)).ToString()} {this.CodigoBarras = (Codigo.Next(900000000)).ToString()} {this.CodigoBarras = (Codigo.Next(900000000)).ToString()}");
+            Console.WriteLine($"Código de barras: {this.CodigoBarras = (Codigo.Next(900000000)).ToString()} {this.CodigoBarras = (Codigo.Next(900000000)).ToString()} {this.CodigoBarras = (Codigo.Next(900000000)).ToString()} {this.CodigoBarras = (Codigo.Next(900000000)).ToString()} {this.CodigoBarras = (Codigo.Next(900000000)).ToString()}");
         }
     }
 

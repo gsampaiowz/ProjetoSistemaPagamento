@@ -1,6 +1,6 @@
 namespace Projeto
 {
-    public abstract class Cartao
+    public abstract class Cartao : Pagamento
     {
         //Propriedades
         public string Bandeira { get; set; } = string.Empty;

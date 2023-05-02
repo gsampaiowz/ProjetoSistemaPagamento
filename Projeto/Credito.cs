@@ -1,7 +1,7 @@
-namespace projeto_senai
+namespace Projeto
 {
 
-    public class crédito : Cartao
+    public class Credito : Cartao
     {
 
         // atributos
@@ -15,7 +15,7 @@ namespace projeto_senai
             Console.WriteLine($"Por favor querido, digite o limite de seu cartão:");
             Limite = float.Parse(Console.ReadLine()!);
 
-            if (Limite >= valor)
+            if (Limite >= Valor)
             {
                 Console.WriteLine(
              @$"Voce escolheu pagar no crédito! Escolha uma das opcoes abaixo
@@ -35,27 +35,27 @@ namespace projeto_senai
                 {
                     case "1":
                         {
-                            
-                            int juros = Valor / 100 * 5;
+
+                            float juros = Valor / 100 * 5;
 
                             Console.WriteLine($"Digite o número exato de parcelas:");
                             int parcelas = int.Parse(Console.ReadLine()!);
 
-                            Console.WriteLine($"Certo! O valor total sera de: {Valor + juros} e sua compra será parcelada em {parcelas} vezes");
+                            Console.WriteLine($"Certo! O Valor total sera de: R${Valor + juros} e sua compra será parcelada em {parcelas} vezes");
                             break;
                         }
 
                     case "2":
                         {
-                            
-                            int juros = Valor / 100 * 8;
+
+                            float juros = Valor / 100 * 8;
 
 
                             Console.WriteLine($"Digite o número exato de parcelas:");
                             int parcelas = int.Parse(Console.ReadLine()!);
 
 
-                            Console.WriteLine($"Certo! O valor total sera de: {valor + juros} e sua compra será parcelada em {parcelas} vezes");
+                            Console.WriteLine($"Certo! O Valor total sera de: R${Valor + juros} e sua compra será parcelada em {parcelas} vezes");
 
 
                             break;
@@ -82,7 +82,12 @@ namespace projeto_senai
 
         public override string SalvarCartao()
         {
-            
+            return @$"
+            Cartão salvo!
+            Bandeira: {Bandeira}
+            Número do cartão: {NumeroCartao}
+            Nome do Titular: {Titular}
+            CVV: {Cvv}";
         }
     }
 }
