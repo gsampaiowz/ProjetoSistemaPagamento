@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿using Projeto_em_grupo;
 
 Pagamento din = new Pagamento();
@@ -29,3 +30,7 @@ Console.WriteLine($@"
     
 
 
+=======
+﻿// See https://aka.ms/new-console-template for more information
+Console.WriteLine("Hello, World!");
+>>>>>>> 1c2248653bdec7db21d910ab8e848a9dc30b4185
