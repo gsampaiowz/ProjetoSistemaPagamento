@@ -11,7 +11,6 @@ string opcao = string.Empty;
 do
 {
     Console.WriteLine($@"
-
 Qual forma de pagamento você deseja utilizar?:
 [1] Boleto
 [2] Cartão de crédito

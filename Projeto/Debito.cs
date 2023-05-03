@@ -14,10 +14,18 @@ namespace Projeto
             {
                 Console.WriteLine($"\nSaldo insuficiente! :( ");
                 Console.WriteLine($"{Cancelar()}");
+                Console.WriteLine($"\n \nPressione qualquer tecla para retornar ao MENU.");
+                Console.ReadKey();
             }
             else
             {
-                Console.WriteLine($"\nParabéns! Sua compra no total de {Valor:C2} foi concluída. \nData: {Data:D}");
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.WriteLine(@$"
+Parabéns! Sua compra no total de {Valor:C2} foi concluída!
+O saldo restante na sua conta é de: {Saldo - Valor:C2}
+Data: {Data:D}
+Obrigado por comprar conosco! <3");
+                Console.ResetColor();
                 Console.WriteLine($"\n \nPressione qualquer tecla para retornar ao MENU");
                 Console.ReadKey();
             }
@@ -26,6 +34,8 @@ namespace Projeto
 
         public override string SalvarCartao()
         {
+            Console.WriteLine($"\nPrimeiro digite os dados do seu cartão:");
+
             Console.WriteLine($"\nDigite a Bandeira do seu cartão:");
             Bandeira = Console.ReadLine()!;
             Console.WriteLine($"\nDigite o número do seu cartão:");
@@ -36,11 +46,14 @@ namespace Projeto
             Cvv = Console.ReadLine()!;
 
             return @$"
+            ---------------------------------
             Cartão salvo!
+
             Bandeira: {Bandeira}
             Número do cartão: {NumeroCartao}
             Nome do Titular: {Titular}
-            CVV: {Cvv}";
+            CVV: {Cvv}
+            ----------------------------------";
         }
     }
 }

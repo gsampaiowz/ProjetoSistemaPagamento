@@ -8,6 +8,7 @@ namespace Projeto
         //métodos
         public void Registrar()
         {
+            Console.ForegroundColor = ConsoleColor.Cyan;
             // valor a ser pago com desconto
             Console.WriteLine(@$"
 Pagamento em boleto tem 12% de desconto!
@@ -20,6 +21,7 @@ Data de emissão do boleto: {Data:D}");
                 Console.Write($"{this.CodigoBarras = (Codigo.Next(900000000)).ToString()} ");
 
             }
+            Console.ResetColor();
             Console.WriteLine($"\n \nPressione qualquer tecla para retornar ao MENU");
             Console.ReadKey();
         }
