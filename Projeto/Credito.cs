@@ -1,19 +1,18 @@
 namespace Projeto
 {
-    public class Credito : Cartao
+    public class Credito : Cartao //herança abstrata
     {
         // atributos
         public float Limite { get; private set; }
-
-        // métodos
+        // métodos implementados
         public override void Pagar()
         {
-
             Console.WriteLine($"\nPor favor querido, digite o limite de seu cartão:");
             Limite = float.Parse(Console.ReadLine()!);
-
+            //validando se o valor excede o saldo
             if (Limite >= Valor)
             {
+                //MENU para parcelas
                 string opcao = string.Empty;
                 do
                 {
@@ -27,10 +26,12 @@ Voce escolheu pagar no crédito! Escolha uma das opcoes abaixo:
 -----------------------------");
                     opcao = Console.ReadLine()!;
                     Console.ResetColor();
+                    //inicializando variáveis
                     float juros = 0;
                     float valorFinal = 0;
                     int parcelas = 0;
                     float valorParcela = 0;
+                    //aplicando descontos e definindo quantidade de parcelas
                     switch (opcao)
                     {
                         case "1":
@@ -45,7 +46,6 @@ Voce escolheu pagar no crédito! Escolha uma das opcoes abaixo:
                                 valorParcela = valorFinal / parcelas;
                                 break;
                             }
-
                         case "2":
                             {
                                 juros = Valor / (float)100 * 8;
@@ -66,11 +66,13 @@ Voce escolheu pagar no crédito! Escolha uma das opcoes abaixo:
                                 Console.ReadKey();
                                 break;
                             }
-
                         default:
                             Console.WriteLine($"\nOpcão inválida. Tente novamente");
                             break;
                     }
+                    //detalhes do pagamento
+                    Console.Clear();
+                    Console.Beep(1000,500);
                     Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine(@$"
 Certo! O Valor total sera de: {valorFinal:C2} e sua compra será parcelada em {parcelas} vezes!

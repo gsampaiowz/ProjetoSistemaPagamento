@@ -1,10 +1,10 @@
 namespace Projeto
 {
-    public class Debito : Cartao
+    public class Debito : Cartao //herança abstrata
     {
-
         // atributos
         public float Saldo { get; private set; }
+        // métodos implementados
         public override void Pagar()
         {
             Console.WriteLine($"\nPor favor querido, digite o saldo atual de seu cartão:");
@@ -19,6 +19,9 @@ namespace Projeto
             }
             else
             {
+                //detalhes do pagamento
+                Console.Clear();
+                Console.Beep(1000,500);
                 Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine(@$"
 Parabéns! Sua compra no total de {Valor:C2} foi concluída!
@@ -30,8 +33,6 @@ Obrigado por comprar conosco! <3");
                 Console.ReadKey();
             }
         }
-
-
         public override string SalvarCartao()
         {
             Console.WriteLine($"\nPrimeiro digite os dados do seu cartão:");

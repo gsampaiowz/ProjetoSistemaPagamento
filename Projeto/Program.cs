@@ -1,12 +1,16 @@
+//acessando a pasta do programa
 using Projeto;
 
+//instanciando todas as classes
 Pagamento pagamento = new Pagamento();
 Debito debito = new Debito();
 Credito credito = new Credito();
 Boleto boleto = new Boleto();
 
+//inicio
 Console.WriteLine($"\nBem vindo ao nosso site de compras!");
 
+//MENU principal
 string opcao = string.Empty;
 do
 {
@@ -19,10 +23,12 @@ Qual forma de pagamento você deseja utilizar?:
 [0] Sair do Sistema");
     opcao = Console.ReadLine()!;
 
+    //caso escolha um método de pagamento
     if (opcao != "4")
     {
         Console.WriteLine($"\nInsira o valor da sua compra:");
         pagamento.Valor = float.Parse(Console.ReadLine()!);
+        //atribuindo o valor para todas as classes filhas
         debito.Valor = pagamento.Valor;
         credito.Valor = pagamento.Valor;
         boleto.Valor = pagamento.Valor;
@@ -44,7 +50,7 @@ Qual forma de pagamento você deseja utilizar?:
                 break;
             case "0":
                 Console.WriteLine($"\n Saindo do programa...");
-                Thread.Sleep(2000);
+                Thread.Sleep(1500);
                 Console.WriteLine($"\n Sistema encerrado.");
                 break;
             default:
@@ -52,8 +58,11 @@ Qual forma de pagamento você deseja utilizar?:
                 break;
         }
     }
+    //caso cancele a operação
     else
     {
         Console.WriteLine($"{pagamento.Cancelar()}");
+        Console.WriteLine($"\n \nPressione qualquer tecla para retornar ao MENU");
+        Console.ReadKey();
     }
 } while (opcao != "0");
