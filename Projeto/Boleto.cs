@@ -9,13 +9,19 @@ namespace Projeto
         public void Registrar()
         {
             // valor a ser pago com desconto
-            Console.WriteLine($"Valor: {Valor * 0.88}");
-        }
+            Console.WriteLine(@$"
+Pagamento em boleto tem 12% de desconto!
+Valor final: {(Valor * 0.88F):C2}
+Data de emissão do boleto: {Data:D}");
+            // código de barras
+            Console.WriteLine($"\nCódigo de barras: ");
+            for (int i = 0; i <= 5; i++)
+            {
+                Console.Write($"{this.CodigoBarras = (Codigo.Next(900000000)).ToString()} ");
 
-
-        public void MostrarCodigoBarras()
-        {
-            Console.WriteLine($"Código de barras: {this.CodigoBarras = (Codigo.Next(900000000)).ToString()} {this.CodigoBarras = (Codigo.Next(900000000)).ToString()} {this.CodigoBarras = (Codigo.Next(900000000)).ToString()} {this.CodigoBarras = (Codigo.Next(900000000)).ToString()} {this.CodigoBarras = (Codigo.Next(900000000)).ToString()}");
+            }
+            Console.WriteLine($"\n \nPressione qualquer tecla para retornar ao MENU");
+            Console.ReadKey();
         }
     }
 
