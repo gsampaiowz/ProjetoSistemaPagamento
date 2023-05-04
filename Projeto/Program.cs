@@ -49,11 +49,11 @@ Qual forma de pagamento você deseja utilizar?:
                 Console.WriteLine($"{pagamento.Cancelar()}");
                 break;
             default:
-                Console.WriteLine($"\n Opção inválida!");
+                Console.WriteLine($"\nVocê digitou uma opção inválida!");
                 break;
         }
     }
-    //caso saia do sistema
+    //caso saia do sistema 
     else if (opcao == "0")
     {
         Console.WriteLine($"\n Saindo do programa...");
