@@ -9,7 +9,7 @@ namespace Projeto
         {
             Console.WriteLine($"\nPor favor querido, digite o saldo atual de seu cartão:");
             Saldo = float.Parse(Console.ReadLine()!);
-
+            //validando se o valor excede o saldo
             if (Saldo < Valor)
             {
                 Console.WriteLine($"\nSaldo insuficiente! :( ");

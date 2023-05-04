@@ -24,7 +24,7 @@ Qual forma de pagamento você deseja utilizar?:
     opcao = Console.ReadLine()!;
 
     //caso escolha um método de pagamento
-    if (opcao != "4")
+    if (opcao != "4" && opcao != "0")
     {
         Console.WriteLine($"\nInsira o valor da sua compra:");
         pagamento.Valor = float.Parse(Console.ReadLine()!);
@@ -48,15 +48,17 @@ Qual forma de pagamento você deseja utilizar?:
             case "4":
                 Console.WriteLine($"{pagamento.Cancelar()}");
                 break;
-            case "0":
-                Console.WriteLine($"\n Saindo do programa...");
-                Thread.Sleep(1500);
-                Console.WriteLine($"\n Sistema encerrado.");
-                break;
             default:
                 Console.WriteLine($"\n Opção inválida!");
                 break;
         }
+    }
+    //caso saia do sistema
+    else if (opcao == "0")
+    {
+        Console.WriteLine($"\n Saindo do programa...");
+        Thread.Sleep(1500);
+        Console.WriteLine($"\n Sistema encerrado.");
     }
     //caso cancele a operação
     else
